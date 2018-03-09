@@ -38,7 +38,7 @@ def register_handle(request):
 	token = token.decode()
 
 	# 给用户的邮箱发送激活邮件
-	send_mail('尚硅谷书城用户激活', '', settings.EMAIL_FROM, [email], html_message='<a href="http://127.0.0.1:8000/users/active/%s/">http://127.0.0.1:8000/users/active/</a>' % token)
+	send_mail('大斌书城用户激活', '', settings.EMAIL_FROM, [email], html_message='<a href="http://127.0.0.1:8000/users/active/%s/">http://127.0.0.1:8000/users/active/</a>' % token)
 
 	if passport == None:
 		return render(request,'users/register.html',{"errmsg": '账号已经存在！'})
